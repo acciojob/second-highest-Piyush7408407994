@@ -1,18 +1,21 @@
 //your JS code here. If required.
 function secondHighest(arr) {
-  if (arr.length < 2) return -Infinity;
-
-  let max = -Infinity;
-  let second = -Infinity;
-
-  for (let num of arr) {
-    if (num > max) {
-      second = max;
-      max = num;
-    } else if (num < max && num > second) {
-      second = num;
-    }
+	if (arr.length < 2) {
+    console.log(-Infinity);
+    return;
   }
 
-  return second === -Infinity ? -Infinity : second;
+  // Remove duplicates
+  arr = [...new Set(arr)];
+
+  if (arr.length < 2) {
+    console.log(-Infinity);
+    return;
+  }
+
+ 
+  arr.sort((a, b) => b - a);
+
+   
+  console.log(arr[1]);
 }
