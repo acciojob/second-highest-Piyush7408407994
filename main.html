@@ -9,17 +9,31 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
+			if (arr.lenght < 2) {
+				return -Infinity;
+			}
+
+			arr = [...new Set(arr)];
+			arr.sort((a,b) => b-a);
+
+			if (arr.length < 2) return -Infinity;
+
+			return arr[1];    
 			
 		}
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			
+			
+			
+			
+			
+		    var n = prompt("Enter the number of elements");
 			var arr = [];
-			for (var i = 0; i < n; i++) {
+			for (var i = 0; i <= n; i++) {
 				arr[i] = prompt("Enter element " + (i+1));
 			}
-			alert(secondHighest(arr));
+			alert(secondHighest(arr)); 
 		}
 		Main();
 	</script>
